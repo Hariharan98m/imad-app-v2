@@ -23,14 +23,27 @@ app.use(session({
     cookie:{maxAge: 1000*60*60*24*30}
 }));
 var crypto=require('crypto');
-
-
-app.get('/date1',function(req,res){
-   pool.query('SELECT CURRENT_TIMESTAMP;',function(err,result){
-       res.send(result.rows[0].now);
+app.get('/ui/logo.PNG',function(req,res){
+      res.sendFile(path.join(__dirname, 'ui', 'logo.PNG')); 
    });
-});
-
+app.get('/ui/opener.PNG',function(req,res){
+      res.sendFile(path.join(__dirname, 'ui', 'opener.PNG')); 
+   });
+app.get('/ui/rest1.PNG',function(req,res){
+      res.sendFile(path.join(__dirname, 'ui', 'rest1.PNG')); 
+   });
+   
+app.get('/ui/rest2.PNG',function(req,res){
+      res.sendFile(path.join(__dirname, 'ui', 'rest2.PNG')); 
+   });
+   
+   
+app.get('/ui/rest3.PNG',function(req,res){
+      res.sendFile(path.join(__dirname, 'ui', 'rest3.PNG')); 
+   });
+app.get('/ui/rest4.PNG',function(req,res){
+      res.sendFile(path.join(__dirname, 'ui', 'rest4.PNG')); 
+   });
 app.post('/login', function (req, res) {
     //username,password
     //JSON
