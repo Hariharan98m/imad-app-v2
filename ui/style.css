@@ -35,7 +35,7 @@ h1{
 .container {
     max-width: 500px;
     padding:20px;
-    margin:0 auto;
+    margin:20 auto;
     border-style: solid;
 }
 .logo{
@@ -44,7 +44,9 @@ h1{
     font-size:200%;
     color: #de9426;
 }
-
+.new{
+    color: blueviolet;
+}
 .header{
     max-width:200px;
     text-align:center;
