@@ -137,6 +137,7 @@ function temp(data,user){
  <html>
     <head>
     <link href="/ui/style.css" rel="stylesheet" />
+    <title>Restaurants</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
     </head>
     <body>
