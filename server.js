@@ -75,15 +75,15 @@ app.post('/login', function (req, res) {
 
 function f(data){
     console.log(data);
-    var title=data.title;
-    var heading=data.heading;
-    var date=data.date;
-    var content=data.content;
-    var comments=data.comments;
+    var name=data.name;
+    var description=data.description;
+    var area_id=data.area_id;
+    var est_name=data.est_name;
+    var daily_menu_id=data.daily_menu_id;
  var htmltemplate=`<html>
       <head>
           <title id=tit>
-              ${title}
+              ${name}
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
@@ -91,17 +91,14 @@ function f(data){
       <body>
           <div class="special">
               <div>
-                  <a href="/articles">Back to Articles</a>
+                  <a href="/restaurants">Back to Articles</a>
               </div>
               <hr/>
               <h1>
-                  ${heading}
+                  ${est_name}
               </h1>
               <div>
-                  ${date.toDateString()}
-              </div>
-              <div>
-                ${content}
+                  ${description}
               </div>
               <hr/>
               <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
@@ -364,8 +361,7 @@ app.post('/comment',function(req,res){
 });
 app.get('/:rest_id',function(req,res){
     //'article-one'
-    pool.query(`SELECT * from restaurant r, location l, daily_menu d, where r.daily_menu_id=d.id and 
-    r.area_id=l.id and id=$1`,[req.params.rest_id],function(err,result){
+    pool.query(`SELECT * from restaurant where id=$1`,[req.params.rest_id],function(err,result){
     if(err){
         res.status(500).send('Something went wrong');
     }
