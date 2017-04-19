@@ -95,8 +95,12 @@ function f(data){
               </div>
               <hr/>
               <h1>
-                  ${est_name}
+                  ${name}
               </h1>
+              <br>
+              <h3>
+                ${est_name}
+            </h3>
               <div>
                   ${description}
               </div>
