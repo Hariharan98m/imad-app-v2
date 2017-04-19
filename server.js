@@ -171,7 +171,7 @@ app.get('/test-db',function(req,res){
     //make a request
     var name='hari2';
     var pass='value';
-    pool.query("insert into users values('"+name+"','"+pass+"')",function(err,result){
+    pool.query("insert into User(name,password) values('"+name+"','"+pass+"')",function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
