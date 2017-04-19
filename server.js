@@ -273,7 +273,7 @@ app.get('/restaurants', function (req, res) {
     }
     else{
         if(result.rows.length===0){
-            res.send('No articles penned by the author');
+            res.send('No restaurants to show');
         }
         else
             {   var rest_Data=result.rows;
@@ -362,20 +362,21 @@ app.post('/comment',function(req,res){
         res.send('Log in to comment');
     }
 });
-app.get('/:articleName',function(req,res){
+app.get('/:rest_id',function(req,res){
     //'article-one'
-    pool.query("SELECT * from articles where title=$1",[req.params.articleName],function(err,result){
+    pool.query(`SELECT * from restaurant r, location l, daily_menu d, where r.daily_menu_id=d.id and 
+    r.area_id=l.id and id=$1`,[req.params.rest_id],function(err,result){
     if(err){
         res.status(500).send('Something went wrong');
     }
     else if(result.rows.length===0){
-        res.send('Article not found');
+        res.send('Restaurant not found');
     }
     else
         {   
-            var articleData=result.rows[0];
-            console.log(articleData);
-            res.send(f(articleData));
+            var rest_Data=result.rows[0];
+            console.log(rest_Data);
+            res.send(f(rest_Data));
         }
     });
 });
