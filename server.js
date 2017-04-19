@@ -57,7 +57,6 @@ app.post('/login', function (req, res) {
         res.send('Username Invalid. Try again.');
     }
     else{
-        console.log('I m here');
         var dBstring=result.rows[0].password;
         var salt=dBstring.split('$')[2];
         var hashed=hash(password,salt);
@@ -127,10 +126,10 @@ function temp(data,user){
     console.log('in temp u:'+user);
     var list='<ul>';
     for (var i=0;i<data.length;i++){
-        var title=data[i].title;
-        var date=data[i].date1;
-        var d=title+' ('+date+')';
-        list+='<li><a href=/'+title+'>'+d+'</a></li><br>';
+        var name=data[i].name;
+        var est_name=data[i].est_name;
+        var d=name+' ('+est_name+')';
+        list+='<li><a href=/'+name+'>'+d+'</a></li><br>';
         }
     list+='</ul>';
     var htmltemplate=`
@@ -148,7 +147,7 @@ function temp(data,user){
             </div>
             <hr/>
             <h3>
-                MY ARTICLES
+                RESTAURANTS
             </h3>
             <div>
                 ${list}
@@ -264,9 +263,9 @@ app.get('/simple', function (req, res) {
     });
     pool.query()
     });
-app.get('/articles', function (req, res) {
+app.get('/restaurants', function (req, res) {
     
-    pool.query("SELECT * from articles",function(err,result){
+    pool.query("SELECT * from restaurant",function(err,result){
     if(err){
         res.status(500).send(err.toString());
     }
@@ -275,17 +274,17 @@ app.get('/articles', function (req, res) {
             res.send('No articles penned by the author');
         }
         else
-            {   var articleData=result.rows;
+            {   var rest_Data=result.rows;
                 var u='';
                 if (req.session&&req.session.auth&&req.session.auth.userId){
-                pool.query("Select name from users where id='"+req.session.auth.userId.toString()+"'",function(err,result){
+                pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"'",function(err,result){
                 u='Hi '+result.rows[0].name.toString();
-                res.send(temp(articleData,u));
+                res.send(temp(restData,u));
                 });
                 }
                 else
                 {u='You are not logged in';
-                res.send(temp(articleData,u));
+                res.send(temp(restData,u));
                 }
                 console.log(u);
                 
