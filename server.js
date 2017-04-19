@@ -171,7 +171,7 @@ app.get('/test-db',function(req,res){
     //make a request
     var name='hari2';
     var pass='value';
-    pool.query("select * from 'Rest_contact'",function(err,result){
+    pool.query("select * from rest_contact",function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
