@@ -14,7 +14,7 @@ var config={
    database:'hariharan98m',
    host:'db.imad.hasura-app.io',
    port:'5432',
-   password:'db-hariharan98m-49153'
+   password:process.env.DB_PASSWORD
 };
 var pool=new Pool(config);
 var session=require('express-session');
