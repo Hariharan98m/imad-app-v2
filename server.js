@@ -172,7 +172,7 @@ app.get('/test-db',function(req,res){
     var name='hari2';
     var pass='value';
     pool.query("select * from Restaurant",function(err,result){
-        res.send(result);
+        res.send(result.toString());
     });
     /*
     pool.query("insert into Users(name,password) values('"+name+"','"+pass+"')",function(err,result){
