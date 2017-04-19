@@ -80,6 +80,8 @@ function f(data){
     var area_id=data.area_id;
     var est_name=data.est_name;
     var daily_menu_id=data.daily_menu_id;
+    var comments=data.comment;
+    var rating=data.rating;
  var htmltemplate=`<html>
       <head>
           <title id=tit>
@@ -108,8 +110,11 @@ function f(data){
               <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
               <input type='submit' placeholder='Submit' id='subbtn' style="font-family:calibri;"/>
               <h5>Comments</h5>
-              <div id="comment_form">   
-              {comments}
+              <div id="comment_form">
+              <h5 id='r'>Rating</h5>
+              ${rating}
+              <h4 id='c'>Comment</h4>
+              ${comments}
               </div>
               
           </div>
