@@ -16,7 +16,8 @@
                         alert(reply);
                     }
                     else{
-                    var cont=document.getElementById('comment_form');
+                    var take=request.responseText.split('$');
+                    var cont=document.getElementById('r');
                     cont.innerHTML=request.responseText;
                     }   
                 } 
@@ -27,7 +28,7 @@
         // Make the request
         var comment = document.getElementById('commentbox').value;
         var title = document.getElementById('tit').innerHTML;
-        var rating = document.getElementById('rt').innerHTML;
+        var rating = document.getElementById('rt').value;
         request.open('POST', '/comment', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({'comment': comment,'title':title,'rating':rating}));  
