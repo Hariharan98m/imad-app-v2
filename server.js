@@ -105,7 +105,7 @@ function f(data){
               <input type='submit' placeholder='Submit' id='subbtn' style="font-family:calibri;"/>
               <h5>Comments</h5>
               <div id="comment_form">   
-              ${comments}
+              {comments}
               </div>
               
           </div>
