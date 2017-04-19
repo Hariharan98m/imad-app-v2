@@ -122,6 +122,7 @@ function f(data){
 app.get('/call',function(req,res){
     res.send('Success');
 });
+
 function temp(data,user){
     console.log('in temp u:'+user);
     var list='<ul>';
@@ -195,7 +196,7 @@ app.post('/create-user', function (req, res) {
     
    var salt=crypto.randomBytes(128).toString('hex');
    var dBstring=hash(password,salt);
-    pool.query("insert into users(name,password) values($1,$2)",[username,dBstring],function(err,result){
+    pool.query("insert into User(name,password) values($1,$2)",[username,dBstring],function(err,result){
         if(err){
             res.send('Username already taken. Choose a different one');
         }
