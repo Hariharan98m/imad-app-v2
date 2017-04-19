@@ -171,6 +171,10 @@ app.get('/test-db',function(req,res){
     //make a request
     var name='hari2';
     var pass='value';
+    pool.query("select * from Restaurant",function(err,result){
+        res.send(result);
+    });
+    /*
     pool.query("insert into Users(name,password) values('"+name+"','"+pass+"')",function(err,result){
         if(err){
             res.status(500).send(err.toString());
@@ -181,6 +185,7 @@ app.get('/test-db',function(req,res){
         }
     });
     //respond with data
+    */
 });
 
 function hash(input,salt){
