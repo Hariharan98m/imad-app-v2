@@ -281,7 +281,7 @@ app.get('/restaurants', function (req, res) {
                 if (req.session&&req.session.auth&&req.session.auth.userId){
                 pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"'",function(err,result){
                 u='Hi '+result.rows[0].name.toString();
-                res.send(temp(restData,u));
+                res.send(temp(rest_Data,u));
                 });
                 }
                 else
