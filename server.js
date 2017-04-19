@@ -284,7 +284,7 @@ app.get('/restaurants', function (req, res) {
                 }
                 else
                 {u='You are not logged in';
-                res.send(temp(restData,u));
+                res.send(temp(rest_Data,u));
                 }
                 console.log(u);
                 
