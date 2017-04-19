@@ -35,10 +35,11 @@ sub.onclick=function(){
 
 var username= document.getElementById('name').value;
 var password=document.getElementById('pw').value;
+var desc= document.getElementById('dc').value;
 console.log(username);console.log(password);
 request.open('POST','http://hariharan98m.imad.hasura-app.io/create-user', true);
 request.setRequestHeader('Content-Type','application/json');
-request.send(JSON.stringify({'username':username,'password':password}));
+request.send(JSON.stringify({'username':username,'password':password,'desc':desc}));
 sub.value='Submitting...';
     
 };
