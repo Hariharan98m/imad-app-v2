@@ -211,7 +211,6 @@ app.post('/create-user', function (req, res) {
     pool.query("insert into users(name,password,description) values($1,$2,$3)",[username,dBstring,desc],function(err,result){
         if(err){
             res.status(500).send(err.toString());
-            res.send('Username already taken. Choose a different one');
         }
         else
         {
