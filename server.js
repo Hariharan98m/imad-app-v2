@@ -171,12 +171,12 @@ app.get('/test-db',function(req,res){
     //make a request
     var name='hari2';
     var pass='value';
-    pool.query("select * from Daily_menu",function(err,result){
+    pool.query("select * from test",function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
         else{
-        res.send(result.toString());
+        res.send(JSON.stringify(result));
         }
     });
     /*
