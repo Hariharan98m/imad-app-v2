@@ -132,6 +132,7 @@ function temp(data,user){
         list+='<li><a href=/'+name+'>'+d+'</a></li><br>';
         }
     list+='</ul>';
+    console.log(list);
     var htmltemplate=`
  <html>
     <head>
