@@ -324,6 +324,7 @@ app.get('/logout',function(req,res){
 app.post('/comment',function(req,res){
     var comment=req.body.comment.toString();
     var title=req.body.title.toString();
+    var rating=req.body.rt.toString();
     title=title.trim();
     console.log('I ve striped title:'+title);
     console.log('I m here in the comments page'+comment+' '+title);
