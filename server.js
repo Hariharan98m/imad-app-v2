@@ -128,8 +128,8 @@ function temp(data,user){
     for (var i=0;i<data.length;i++){
         var name=data[i].name;
         var est_name=data[i].est_name;
-        var d=name+' ('+est_name+')';
-        list+='<li><a href=/'+name+'>'+d+'</a></li><br>';
+        var d=name+'\n ('+est_name+')';
+        list+='<li><a href=/'+data[i].id+'>'+d+'</a></li><br>';
         }
     list+='</ul>';
     console.log(list);
