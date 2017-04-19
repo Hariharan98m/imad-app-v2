@@ -63,7 +63,7 @@ app.post('/login', function (req, res) {
         var hashed=hash(password,salt);
         if (hashed===dBstring){
         //Set the session
-        req.session.auth={userId:result.rows[0].id};
+        req.session.auth={userId:result.rows[0].name};
         res.send('Successful check for credentials:'+username);
         }
         else
@@ -221,7 +221,7 @@ app.post('/create-user', function (req, res) {
 
 app.get('/clogin',function(req,res){
     if (req.session&&req.session.auth&&req.session.auth.userId){
-        pool.query("Select name from users where id='"+req.session.auth.userId.toString()+"'",function(err,result){
+        pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"'",function(err,result){
         res.send('Hi'+result.rows[0].name);    
         });
     }
