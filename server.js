@@ -332,21 +332,21 @@ app.post('/comment',function(req,res){
             console.log('cookie set');
             var user='';
             var his='';
-                pool.query("Select name from users where id='"+req.session.auth.userId.toString()+"';",function(err,result){
+            var his2='';
+                pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"';",function(err,result){
                     user=result.rows[0].name.toString().trim();
                     console.log('user:'+user);
-                pool.query("select comments from articles where title=$1;",[title],function(err,result){
-                    his=result.rows[0].comments.toString().trim();                
+                pool.query("select comments, rating from restaurants where name=$1;",[title],function(err,result){
+                    his=result.rows[0].comments.toString().trim();
+                    his2=result.rows[0].rating.toString().trim();
                    pool.query('SELECT CURRENT_TIMESTAMP;',function(err,result){
                     var date=result.rows[0].now.toString();
-                    
-                
-                pool.query("update articles set comments=$1 where title=$2;",['<p>'+his+'<b>'+user+'</b>@ '+date+': '+comment+'</p>',title],function(err,result){
+                pool.query("update articles set comments=$1,rating=$2 where name=$3;",['<p>'+his+'<b>'+user+'</b>@ '+date+': '+comment+'</p>','<p>'+his1+'<b>'+user+': '+rating+'</p>',title],function(err,result){
                     if(err){
                         res.send('error');
                     }
                     else{
-                        pool.query("select comments from articles where title=$1;",[title],function(err,result){
+                        pool.query("select comments, rating from articles where name=$1;",[title],function(err,result){
                         
                     res.send(result.rows[0].comments.toString().trim());
                     });
@@ -357,6 +357,8 @@ app.post('/comment',function(req,res){
                     
                 });
                 });
+                
+                
                 });
                 
     }       
