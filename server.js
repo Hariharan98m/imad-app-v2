@@ -213,7 +213,7 @@ app.post('/create-user', function (req, res) {
             res.status(500).send(err.toString());
         }
         else
-        {
+        {   req.session.auth={userId:result.rows[0].name};
             res.send('User successfully created:'+username);
         }
     });
