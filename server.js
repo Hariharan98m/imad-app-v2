@@ -171,7 +171,7 @@ app.get('/test-db',function(req,res){
     //make a request
     var name='hari2';
     var pass='value';
-    pool.query("insert into User('name',password) values('"+name+"','"+pass+"')",function(err,result){
+    pool.query("insert into Users(name,password) values('"+name+"','"+pass+"')",function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
@@ -197,7 +197,7 @@ console.log(username);
 console.log(password);
    var salt=crypto.randomBytes(128).toString('hex');
    var dBstring=hash(password,salt);
-    pool.query("insert into User(name,password) values($1,$2)",[username,dBstring],function(err,result){
+    pool.query("insert into Users(name,password) values($1,$2)",[username,dBstring],function(err,result){
         if(err){
             res.send('Username already taken. Choose a different one');
         }
