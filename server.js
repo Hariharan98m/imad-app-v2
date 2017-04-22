@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 var Pool=require('pg').Pool;
 var config={
    user:'admin',
-   database:'admin',
+   database:'postgres',
    host:'data.tortoni56.hasura-app.io/',
    port:'5432',
    password:'consistently-fernery-lave'
