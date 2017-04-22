@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 var Pool=require('pg').Pool;
 var config={
-   user:'hariharan98m',
-   database:'hariharan98m',
-   host:'db.imad.hasura-app.io',
+   user:'admin',
+   database:'admin',
+   host:'data.tortoni56.hasura-app.io/',
    port:'5432',
-   password:process.env.DB_PASSWORD
+   password:'consistently-fernery-lave'
 };
 var pool=new Pool(config);
 var session=require('express-session');
