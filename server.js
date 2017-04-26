@@ -215,14 +215,10 @@ app.post('/create-user', function (req, res) {
     console.log(password);
    var salt=crypto.randomBytes(128).toString('hex');
    var dBstring=hash(password,salt);
-    pool.query("insert into users(name,password,description) values($1,$2,$3)",[username,dBstring,desc],function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else
-        {   req.session.auth={userId:result.rows[0].name};
-            res.send('User successfully created:'+username);
-        }
+   user.push({"name":username,"password":password,"description":desc});
+        req.session.auth={userId:username};
+        res.send('User successfully created:'+username);
+        
     });
 });
 
