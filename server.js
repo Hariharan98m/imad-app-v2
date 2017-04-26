@@ -213,13 +213,11 @@ app.post('/create-user', function (req, res) {
     var desc=req.body.desc;
     console.log(username);
     console.log(password);
-   var salt=crypto.randomBytes(128).toString('hex');
-   var dBstring=hash(password,salt);
-   user.push({"name":username,"password":password,"description":desc});
-        req.session.auth={userId:username};
-        res.send('User successfully created:'+username);
-        
-    });
+    var salt=crypto.randomBytes(128).toString('hex');
+    var dBstring=hash(password,salt);
+    user.push({"name":username,"password":password,"description":desc});
+    req.session.auth={userId:username};
+    res.send('User successfully created:'+username);
 });
 
 app.get('/clogin',function(req,res){
@@ -797,4 +795,4 @@ var database=[
       "loc_name": "Kilpauk"
     }
   }
-];
+]
