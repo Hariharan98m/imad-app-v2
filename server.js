@@ -392,3 +392,413 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`App listening on port ${port}!`);
 });
+
+var user=[
+    {
+        "name":"Hari",
+        "password":"123",
+        "description":"FM"
+    }
+    ];
+
+
+
+var database=[
+  {
+    "id": 5,
+    "name": "A2B Adyar Ananda Bhavan",
+    "area_id": 2,
+    "est_name": "Sweet Shop",
+    "daily_menu_id": 4,
+    "menu": {
+      "id": 4,
+      "start": "2017-04-16T07:24:50.1+00:00",
+      "end": "2017-04-17T07:24:50.1+00:00",
+      "cuisine": "North Indian",
+      "dishes": [
+        {
+          "id": 22,
+          "dish_name": "Cheese Eeda Cutlets",
+          "price": 200,
+          "daily_menu_id": 4
+        },
+        {
+          "id": 23,
+          "dish_name": "Barukchi Akoori",
+          "price": 210,
+          "daily_menu_id": 4
+        },
+        {
+          "id": 24,
+          "dish_name": "Lollipop na Farcha",
+          "price": 60,
+          "daily_menu_id": 4
+        },
+        {
+          "id": 25,
+          "dish_name": "Boti Soti",
+          "price": 160,
+          "daily_menu_id": 4
+        },
+        {
+          "id": 26,
+          "dish_name": "Milk Jeera Bengali Ped",
+          "price": 170,
+          "daily_menu_id": 4
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 5,
+        "number": "044 25281453"
+      }
+    ],
+    "area": {
+      "id": 2,
+      "city": "Chennai",
+      "zip_code": 600040,
+      "loc_name": "Anna Nagar East"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Oregano's",
+    "area_id": 1,
+    "est_name": "Quick Bites",
+    "daily_menu_id": 5,
+    "menu": {
+      "id": 5,
+      "start": "2017-04-16T07:01:50.1+00:00",
+      "end": "2017-04-17T07:01:50.1+00:00",
+      "cuisine": "Italian",
+      "dishes": [
+        {
+          "id": 5,
+          "dish_name": "Masala Mac Pasta",
+          "price": 90,
+          "daily_menu_id": 5
+        },
+        {
+          "id": 6,
+          "dish_name": "Herebed Pasta",
+          "price": 90,
+          "daily_menu_id": 5
+        },
+        {
+          "id": 7,
+          "dish_name": "Tang Lime Orange",
+          "price": 40,
+          "daily_menu_id": 5
+        },
+        {
+          "id": 8,
+          "dish_name": "Beetroot Mayo Garlic Bread",
+          "price": 60,
+          "daily_menu_id": 5
+        },
+        {
+          "id": 9,
+          "dish_name": "Corn and Spinach Onion Bread",
+          "price": 60,
+          "daily_menu_id": 5
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 6,
+        "number": "044 25785098"
+      }
+    ],
+    "area": {
+      "id": 1,
+      "city": "Chennai",
+      "zip_code": 600010,
+      "loc_name": "Kilpauk"
+    }
+  },
+  {
+    "id": 7,
+    "name": "The English Tearoom",
+    "area_id": 4,
+    "est_name": "Cafe",
+    "daily_menu_id": 6,
+    "menu": {
+      "id": 6,
+      "start": "2017-04-16T07:01:50.1+00:00",
+      "end": "2017-04-17T07:01:50.1+00:00",
+      "cuisine": "Continental",
+      "dishes": [
+        {
+          "id": 13,
+          "dish_name": "Banana Peanut butter almond milk smothiee",
+          "price": 190,
+          "daily_menu_id": 6
+        },
+        {
+          "id": 14,
+          "dish_name": "Saffron Kahwa Green Tea",
+          "price": 76,
+          "daily_menu_id": 6
+        },
+        {
+          "id": 15,
+          "dish_name": "Shortbread cookies with Ice Tea",
+          "price": 80,
+          "daily_menu_id": 6
+        },
+        {
+          "id": 16,
+          "dish_name": "Cheesy potato wedges",
+          "price": 290,
+          "daily_menu_id": 6
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 7,
+        "number": "044 34577985"
+      },
+      {
+        "rest_id": 7,
+        "number": "044 34577988"
+      },
+      {
+        "rest_id": 7,
+        "number": "044 34577981"
+      }
+    ],
+    "area": {
+      "id": 4,
+      "city": "Chennai",
+      "zip_code": 600018,
+      "loc_name": "Alwarpet"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Haunted",
+    "area_id": 2,
+    "est_name": "Casual Dining",
+    "daily_menu_id": 7,
+    "menu": {
+      "id": 7,
+      "start": "2017-04-19T07:01:50.1+00:00",
+      "end": "2017-04-20T08:01:50.1+00:00",
+      "cuisine": "Chinese",
+      "dishes": [
+        {
+          "id": 10,
+          "dish_name": "Spicy Tikka Roll",
+          "price": 120,
+          "daily_menu_id": 7
+        },
+        {
+          "id": 11,
+          "dish_name": "Brocoli Honey Dew",
+          "price": 80,
+          "daily_menu_id": 7
+        },
+        {
+          "id": 12,
+          "dish_name": "Dragon Potato Paneer",
+          "price": 90,
+          "daily_menu_id": 7
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 8,
+        "number": "044 39737698"
+      }
+    ],
+    "area": {
+      "id": 2,
+      "city": "Chennai",
+      "zip_code": 600040,
+      "loc_name": "Anna Nagar East"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Ciclo Cafe",
+    "area_id": 5,
+    "est_name": "Casual Dining",
+    "daily_menu_id": 6,
+    "menu": {
+      "id": 6,
+      "start": "2017-04-16T07:01:50.1+00:00",
+      "end": "2017-04-17T07:01:50.1+00:00",
+      "cuisine": "Continental",
+      "dishes": [
+        {
+          "id": 13,
+          "dish_name": "Banana Peanut butter almond milk smothiee",
+          "price": 190,
+          "daily_menu_id": 6
+        },
+        {
+          "id": 14,
+          "dish_name": "Saffron Kahwa Green Tea",
+          "price": 76,
+          "daily_menu_id": 6
+        },
+        {
+          "id": 15,
+          "dish_name": "Shortbread cookies with Ice Tea",
+          "price": 80,
+          "daily_menu_id": 6
+        },
+        {
+          "id": 16,
+          "dish_name": "Cheesy potato wedges",
+          "price": 290,
+          "daily_menu_id": 6
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 9,
+        "number": "044 39577113"
+      },
+      {
+        "rest_id": 9,
+        "number": "044 43947390"
+      },
+      {
+        "rest_id": 9,
+        "number": "044 43421189"
+      }
+    ],
+    "area": {
+      "id": 5,
+      "city": "Chennai",
+      "zip_code": 600020,
+      "loc_name": "Kotturpuram"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Palmshore",
+    "area_id": 7,
+    "est_name": "Nightlife",
+    "daily_menu_id": 7,
+    "menu": {
+      "id": 7,
+      "start": "2017-04-19T07:01:50.1+00:00",
+      "end": "2017-04-20T08:01:50.1+00:00",
+      "cuisine": "Chinese",
+      "dishes": [
+        {
+          "id": 10,
+          "dish_name": "Spicy Tikka Roll",
+          "price": 120,
+          "daily_menu_id": 7
+        },
+        {
+          "id": 11,
+          "dish_name": "Brocoli Honey Dew",
+          "price": 80,
+          "daily_menu_id": 7
+        },
+        {
+          "id": 12,
+          "dish_name": "Dragon Potato Paneer",
+          "price": 90,
+          "daily_menu_id": 7
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 10,
+        "number": "044 37410989"
+      },
+      {
+        "rest_id": 10,
+        "number": "044 37410985"
+      },
+      {
+        "rest_id": 10,
+        "number": "044 37410980"
+      },
+      {
+        "rest_id": 10,
+        "number": "044 18214243"
+      },
+      {
+        "rest_id": 10,
+        "number": "044 18214247"
+      },
+      {
+        "rest_id": 10,
+        "number": "044 18214246"
+      }
+    ],
+    "area": {
+      "id": 7,
+      "city": "Chennai",
+      "zip_code": 600083,
+      "loc_name": "Ashok Nagar"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Eating Circles",
+    "area_id": 1,
+    "est_name": "Casual Dining",
+    "daily_menu_id": 2,
+    "menu": {
+      "id": 2,
+      "start": "2017-04-16T07:20:01.813+00:00",
+      "end": "2017-04-17T07:20:01.813+00:00",
+      "cuisine": "South Indian",
+      "dishes": [
+        {
+          "id": 1,
+          "dish_name": "Red Rice Butter Dosa",
+          "price": 75,
+          "daily_menu_id": 2
+        },
+        {
+          "id": 2,
+          "dish_name": "Dosa Platter",
+          "price": 195,
+          "daily_menu_id": 2
+        },
+        {
+          "id": 3,
+          "dish_name": "Sabudana Pongal",
+          "price": 75,
+          "daily_menu_id": 2
+        },
+        {
+          "id": 4,
+          "dish_name": "Ghee Idly",
+          "price": 50,
+          "daily_menu_id": 2
+        }
+      ]
+    },
+    "contact": [
+      {
+        "rest_id": 11,
+        "number": "044 46238789"
+      },
+      {
+        "rest_id": 11,
+        "number": "044 46238788"
+      }
+    ],
+    "area": {
+      "id": 1,
+      "city": "Chennai",
+      "zip_code": 600010,
+      "loc_name": "Kilpauk"
+    }
+  }
+];
