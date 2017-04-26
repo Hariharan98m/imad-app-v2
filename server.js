@@ -47,13 +47,11 @@ app.get('/ui/rest4.PNG',function(req,res){
 app.post('/login', function (req, res) {
     //username,password
     //JSON
+    var flag=1;
     var username=req.body.username;
     var password=req.body.password;
-    pool.query('Select * from users where name=$1',[username],function(err,result){
-    if(err){
-        res.status(500).send('Something went wrong in the server.');
-    }
-    else if(result.rows.length===0){
+    for(var i=0;i<user.length();i++){
+    if(result.rows.length===0){
         res.send('Username Invalid. Try again.');
     }
     else{
@@ -68,7 +66,10 @@ app.post('/login', function (req, res) {
         else
         res.send('Password Mismatch. Try again.');
     }
-    });
+    }
+    if(flag){
+            res.status(500).send('Something went wrong in the server.');
+    }
 });
 
 
@@ -222,8 +223,9 @@ app.post('/create-user', function (req, res) {
 
 app.get('/clogin',function(req,res){
     if (req.session&&req.session.auth&&req.session.auth.userId){
-        pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"'",function(err,result){
-        res.send('Hi'+result.rows[0].name);    
+        for(var i=0;i<user.length();i++){
+            if (req.session.auth.userId.toString()===user.name)
+                res.send('Hi'+user.name);    
         });
     }
     else
