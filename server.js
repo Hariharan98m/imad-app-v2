@@ -126,14 +126,10 @@ function f(data){
               <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
               <input type='submit' placeholder='Submit' id='subbtn' style="font-family:calibri;"/>
               </div>
-              
               <div>
-              <h5>Comments so far</h5>
-              ${comments}
-              <div id="comment_form">
-              <h5 id='r'>Rating</h5>
-              ${rating}
-              </div>
+              <h5>So far</h5>
+              <div>${ratng}</div>
+              <div>${comments}</div>
               
           </div>
           <script type="text/javascript" src="/ui/main3.js"></script>
