@@ -23,12 +23,13 @@ app.use(session({
     cookie:{maxAge: 1000*60*60*24*30}
 }));
 var crypto=require('crypto');
+
 app.get('/ui/logo.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'logo.PNG')); 
-   });
+});
 app.get('/ui/opener.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'opener.PNG')); 
-   });
+});
 app.get('/ui/rest1.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'rest1.PNG')); 
    });
@@ -47,28 +48,23 @@ app.get('/ui/rest4.PNG',function(req,res){
 app.post('/login', function (req, res) {
     //username,password
     //JSON
-    var flag=1;
+    var flag=0,i;
     var username=req.body.username;
     var password=req.body.password;
-    for(var i=0;i<user.length();i++){
-    if(user.name.length===0){
-        res.send('Username Invalid. Try again.');
+    for(i=0;i<user.length;i++){
+    if (user[i].name===username) flag=1;break;
     }
-    else{
-        var dBstring=result.rows[0].password;
+    if(flag==1){
+        var dBstring=user[i].password;
         var salt=dBstring.split('$')[2];
         var hashed=hash(password,salt);
         if (hashed===dBstring){
         //Set the session
-        req.session.auth={userId:result.rows[0].name};
+        req.session.auth={userId:username};
         res.send('Successful check for credentials:'+username);
-        }
-        else
-        res.send('Password Mismatch. Try again.');
     }
-    }
-    if(flag){
-            res.status(500).send('Something went wrong in the server.');
+    else
+        res.send('Username/ Password Invalid. Try again.');
     }
 });
 
