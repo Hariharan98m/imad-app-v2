@@ -109,8 +109,7 @@ function f(data){
               <h1>
                   ${name}
               </h1>
-              <br>
-              <h3>
+                 <h3>
                 ${est_name}
             </h3>
               <div>
