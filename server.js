@@ -76,6 +76,7 @@ app.get('/login1', function (req, res) {
     for(var i=0;i<user.length;i++){
         console.log(user[i]);
     }
+    res.send("ok");
 });
 
 
