@@ -37,10 +37,10 @@ app.get('/ui/rest2.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'rest2.PNG')); 
    });
    
-   
 app.get('/ui/rest3.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'rest3.PNG')); 
    });
+   
 app.get('/ui/rest4.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'rest4.PNG')); 
    });
@@ -71,8 +71,6 @@ app.post('/login', function (req, res) {
             res.status(500).send('Something went wrong in the server.');
     }
 });
-
-
 
 function f(data){
     console.log(data);
@@ -124,10 +122,6 @@ function f(data){
     </html>`;
     return htmltemplate;
 }
-
-app.get('/call',function(req,res){
-    res.send('Success');
-});
 
 function temp(data,user){
     console.log('in temp u:'+user);
