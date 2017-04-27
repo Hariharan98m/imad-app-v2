@@ -73,7 +73,9 @@ app.post('/login', function (req, res) {
 });
 
 app.post('/login1', function (req, res) {
-        res.send(JSON.stringify(user));
+    for(var i=0;i<user.length;i++){
+        console.log(user[i]);
+    }
 });
 
 
