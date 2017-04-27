@@ -323,13 +323,16 @@ app.post('/comment',function(req,res){
 app.get('/:rest_id',function(req,res){
     //'article-one'
    for(var i=0;i<database.length;i++){
+       console.log("database=");
+       console.log(database[i]);
         if(req.params.rest_id===database[i].id){
-
             var rest_Data=database[i];
             console.log(rest_Data);
             res.send(f(rest_Data));
     }
    }
+   res.send("soething went worng");
+   
 });
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
