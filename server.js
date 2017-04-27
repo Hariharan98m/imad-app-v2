@@ -24,6 +24,7 @@ app.use(session({
 }));
 var crypto=require('crypto');
 
+
 app.get('/ui/logo.PNG',function(req,res){
       res.sendFile(path.join(__dirname, 'ui', 'logo.PNG')); 
 });
@@ -52,6 +53,8 @@ app.post('/login', function (req, res) {
     var username=req.body.username;
     var password=req.body.password;
     for(i=0;i<user.length;i++){
+    console.log(user[i].name);
+    console.log(user[i].password);
     if (user[i].name===username) flag=1;break;
     }
     if(flag==1){
