@@ -86,7 +86,7 @@ app.get('/login1', function (req, res) {
 function f(data){
     console.log(data);
     var name=data.name;
-    var description=data.description;
+    //var description=data.description;
     var area_id=data.area_id;
     var est_name=data.est_name;
     var daily_menu_id=data.daily_menu_id;
@@ -114,7 +114,7 @@ function f(data){
                 ${est_name}
             </h3>
               <div>
-                  ${description}
+                  description
               </div>
               <hr/>
               <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
@@ -243,7 +243,6 @@ app.get('/restaurants', function (req, res) {
             for(var i=0;i<user.length;i++){
                 if (req.session.auth.userId.toString()===user[i].name){
                     u='Hi '+result.rows[0].name.toString();
-                    res.send(temp(rest_Data,u));
                 }
             }
         }
@@ -323,20 +322,14 @@ app.post('/comment',function(req,res){
 });
 app.get('/:rest_id',function(req,res){
     //'article-one'
-    pool.query(`SELECT * from restaurant where id=$1`,[req.params.rest_id],function(err,result){
-    if(err){
-        res.status(500).send('Something went wrong');
-    }
-    else if(result.rows.length===0){
-        res.send('Restaurant not found');
-    }
-    else
-        {   
-            var rest_Data=result.rows[0];
+   for(var i=0;i<database.length;i++){
+        if(req.params.rest_id===database[i].id){
+
+            var rest_Data=database[i];
             console.log(rest_Data);
             res.send(f(rest_Data));
-        }
-    });
+    }
+   }
 });
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
@@ -360,6 +353,8 @@ var database=[
     "area_id": 2,
     "est_name": "Sweet Shop",
     "daily_menu_id": 4,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 4,
       "start": "2017-04-16T07:24:50.1+00:00",
@@ -417,6 +412,8 @@ var database=[
     "area_id": 1,
     "est_name": "Quick Bites",
     "daily_menu_id": 5,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 5,
       "start": "2017-04-16T07:01:50.1+00:00",
@@ -474,6 +471,8 @@ var database=[
     "area_id": 4,
     "est_name": "Cafe",
     "daily_menu_id": 6,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 6,
       "start": "2017-04-16T07:01:50.1+00:00",
@@ -533,6 +532,8 @@ var database=[
     "area_id": 2,
     "est_name": "Casual Dining",
     "daily_menu_id": 7,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 7,
       "start": "2017-04-19T07:01:50.1+00:00",
@@ -578,6 +579,8 @@ var database=[
     "area_id": 5,
     "est_name": "Casual Dining",
     "daily_menu_id": 6,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 6,
       "start": "2017-04-16T07:01:50.1+00:00",
@@ -637,6 +640,8 @@ var database=[
     "area_id": 7,
     "est_name": "Nightlife",
     "daily_menu_id": 7,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 7,
       "start": "2017-04-19T07:01:50.1+00:00",
@@ -702,6 +707,8 @@ var database=[
     "area_id": 1,
     "est_name": "Casual Dining",
     "daily_menu_id": 2,
+    "rating":"",
+    "comment":"",
     "menu": {
       "id": 2,
       "start": "2017-04-16T07:20:01.813+00:00",
