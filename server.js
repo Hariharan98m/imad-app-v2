@@ -234,46 +234,21 @@ app.get('/ui/main2.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main2.js'));
 });
 
-function pass(name,age){
-    return age;
-}
-app.get('/simple', function (req, res) {
-    var title='article-one';
-    
-    pool.query("select comments from articles where title='"+title+"'",function(err,result){
-    
-    res.send(result.rows[0].comments);
-    });
-    pool.query()
-    });
+
 app.get('/restaurants', function (req, res) {
     
-    pool.query("SELECT * from restaurant",function(err,result){
-    if(err){
-        res.status(500).send(err.toString());
-    }
-    else{
-        if(result.rows.length===0){
-            res.send('No restaurants to show');
-        }
-        else
-            {   var rest_Data=result.rows;
-                var u='';
-                if (req.session&&req.session.auth&&req.session.auth.userId){
-                pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"'",function(err,result){
-                u='Hi '+result.rows[0].name.toString();
-                res.send(temp(rest_Data,u));
-                });
+       var rest_Data=database;
+        var u='';
+        if (req.session&&req.session.auth&&req.session.auth.userId){
+            for(var i=0;i<user.length;i++){
+                if (req.session.auth.userId.toString()===user[i].name){
+                    u='Hi '+result.rows[0].name.toString();
+                    res.send(temp(rest_Data,u));
                 }
-                else
-                {u='You are not logged in';
-                res.send(temp(rest_Data,u));
-                }
-                console.log(u);
-                
             }
-    }
-    });
+        }
+        u='You are not logged in';
+        res.send(temp(rest_Data,u));
 });
 
 function lout(){
