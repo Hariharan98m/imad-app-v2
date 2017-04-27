@@ -119,7 +119,7 @@ function f(data){
               <hr/>
               <div>
               <h5>Rate it!</h5>
-              <input type='text' placeholder='Rating' id='rate' style="width:350px;height:75px;font-family:calibri;"/>
+              <input type='text' placeholder='Rating' id='rate' style="width:50px;height:30px;font-family:calibri;"/>
               <input type='submit' placeholder='Submit' id='subbtn2' style="font-family:calibri;"/>
               </div>
               <div>
