@@ -119,7 +119,8 @@ function f(data){
               <hr/>
               <div>
               <h5>Rate it!</h5>
-              <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
+              <input type='text' placeholder='Rating' id='rate' style="width:350px;height:75px;font-family:calibri;"/>
+              <input type='submit' placeholder='Submit' id='subbtn2' style="font-family:calibri;"/>
               </div>
               <div>
               <h5>Comment Right Away!!</h5>
@@ -128,9 +129,9 @@ function f(data){
               </div>
               <div>
               <h5>So far</h5>
-              <div>${ratng}</div>
+              <div>${rating}</div>
               <div>${comments}</div>
-              
+              </div>
           </div>
           <script type="text/javascript" src="/ui/main3.js"></script>
       </body>
