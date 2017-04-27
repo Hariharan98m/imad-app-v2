@@ -65,8 +65,9 @@ app.post('/login', function (req, res) {
         //Set the session
         req.session.auth={userId:username};
         res.send('Successful check for credentials:'+username);
+        }
     }
-    else
+    else{
         res.send('Username/ Password Invalid. Try again.');
     }
 });
