@@ -54,9 +54,11 @@ app.post('/login', function (req, res) {
     var password=req.body.password;
     for(i=0;i<user.length;i++){
     console.log("user[i]=");
-    console.log(user[i].name);
-    console.log(user[i].password);
-    if (user[i].name===username) flag=1;break;
+    console.log(user[i]);
+    if (user[i].name===username) 
+    {
+     flag=1;break;
+    }
     }
     if(flag==1){
         var dBstring=user[i].password;
