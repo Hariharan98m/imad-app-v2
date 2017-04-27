@@ -165,32 +165,6 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/test-db',function(req,res){
-    //make a request
-    var name='hari2';
-    var pass='value';
-    pool.query("select * from rest_contact",function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else{
-        res.send(JSON.stringify(result));
-        }
-    });
-    /*
-    pool.query("insert into Users(name,password) values('"+name+"','"+pass+"')",function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else
-        {
-            res.send('Success');
-        }
-    });
-    //respond with data
-    */
-});
-
 function hash(input,salt){
     var hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
     return ['pbkdf2Sync','10000',salt,hashed.toString('hex')].join('$');
@@ -213,10 +187,10 @@ app.post('/create-user', function (req, res) {
 
 app.get('/clogin',function(req,res){
     if (req.session&&req.session.auth&&req.session.auth.userId){
-        for(var i=0;i<user.length();i++){
-            if (req.session.auth.userId.toString()===user.name)
-                res.send('Hi'+user.name);    
-        });
+        for(var i=0;i<user.length;i++){
+            if (req.session.auth.userId.toString()===user[i].name)
+                res.send('Hi'+user[i].name);    
+        }
     }
     else
     res.send('You are not logged in');
