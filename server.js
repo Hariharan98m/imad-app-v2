@@ -128,7 +128,7 @@ function f(data){
               <input type='submit' placeholder='Submit' id='subbtn' style="font-family:calibri;"/>
               </div>
               <div>
-              <br><br>
+              <br>
               <hr>
               <h4>So far</h4>
               <div>${rating}</div>
