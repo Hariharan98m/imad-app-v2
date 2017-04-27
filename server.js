@@ -72,6 +72,11 @@ app.post('/login', function (req, res) {
     }
 });
 
+app.post('/login1', function (req, res) {
+        res.send(JSON.stringify(user));
+});
+
+
 function f(data){
     console.log(data);
     var name=data.name;
