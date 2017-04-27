@@ -51,7 +51,7 @@ app.post('/login', function (req, res) {
     var username=req.body.username;
     var password=req.body.password;
     for(var i=0;i<user.length();i++){
-    if(result.rows.length===0){
+    if(user.name.length===0){
         res.send('Username Invalid. Try again.');
     }
     else{
