@@ -72,7 +72,7 @@ app.post('/login', function (req, res) {
     }
 });
 
-app.post('/login1', function (req, res) {
+app.get('/login1', function (req, res) {
     for(var i=0;i<user.length;i++){
         console.log(user[i]);
     }
