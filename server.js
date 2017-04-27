@@ -322,16 +322,8 @@ app.post('/comment',function(req,res){
 });
 app.get('/:rest_id',function(req,res){
     //'article-one'
-   for(var i=0;i<database.length;i++){
-       console.log("database=");
-       console.log(database[i]);
-        if(req.params.rest_id===database[i].id){
-            var rest_Data=database[i];
-            console.log(rest_Data);
-            res.send(f(rest_Data));
-    }
-   }
-   res.send("soething went worng");
+    console.log(database[req.params.rest_id]);
+   res.send(f(database[req.params.rest_id]));
    
 });
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
@@ -351,7 +343,7 @@ var user=[
 
 var database=[
   {
-    "id": 5,
+    "id": 0,
     "name": "A2B Adyar Ananda Bhavan",
     "area_id": 2,
     "est_name": "Sweet Shop",
@@ -410,7 +402,7 @@ var database=[
     }
   },
   {
-    "id": 6,
+    "id": 1,
     "name": "Oregano's",
     "area_id": 1,
     "est_name": "Quick Bites",
@@ -469,7 +461,7 @@ var database=[
     }
   },
   {
-    "id": 7,
+    "id": 2,
     "name": "The English Tearoom",
     "area_id": 4,
     "est_name": "Cafe",
@@ -530,7 +522,7 @@ var database=[
     }
   },
   {
-    "id": 8,
+    "id": 3,
     "name": "Haunted",
     "area_id": 2,
     "est_name": "Casual Dining",
@@ -577,7 +569,7 @@ var database=[
     }
   },
   {
-    "id": 9,
+    "id": 4,
     "name": "Ciclo Cafe",
     "area_id": 5,
     "est_name": "Casual Dining",
@@ -638,7 +630,7 @@ var database=[
     }
   },
   {
-    "id": 10,
+    "id": 5,
     "name": "Palmshore",
     "area_id": 7,
     "est_name": "Nightlife",
@@ -705,7 +697,7 @@ var database=[
     }
   },
   {
-    "id": 11,
+    "id": 6,
     "name": "Eating Circles",
     "area_id": 1,
     "est_name": "Casual Dining",
