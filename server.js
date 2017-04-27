@@ -117,14 +117,22 @@ function f(data){
                   description
               </div>
               <hr/>
+              <div>
+              <h5>Rate it!</h5>
+              <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
+              </div>
+              <div>
+              <h5>Comment Right Away!!</h5>
               <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
               <input type='submit' placeholder='Submit' id='subbtn' style="font-family:calibri;"/>
-              <h5>Comments</h5>
+              </div>
+              
+              <div>
+              <h5>Comments so far</h5>
+              ${comments}
               <div id="comment_form">
               <h5 id='r'>Rating</h5>
               ${rating}
-              <h4 id='c'>Comment</h4>
-              ${comments}
               </div>
               
           </div>
