@@ -102,7 +102,7 @@ function f(data){
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-          <div class="special">
+          <div class="special" style:'float:right'>
               <div>
                   <a href="/restaurants">Back to Articles</a>
               </div>
