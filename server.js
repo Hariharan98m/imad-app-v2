@@ -98,10 +98,12 @@ function f(data){
               ${name}
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <img src="/ui/rest4.png" style='width=409px;height:147px'>
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
+      <div>
+      <img src="/ui/rest4.png" style='width=409px;height:147px'>
+      </div>
           <div class="special">
               <div>
                   <a href="/restaurants">Back to Articles</a>
