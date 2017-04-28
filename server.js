@@ -248,7 +248,7 @@ app.get('/restaurants', function (req, res) {
         if (req.session&&req.session.auth&&req.session.auth.userId){
             for(var i=0;i<user.length;i++){
                 if (req.session.auth.userId.toString()===user[i].name){
-                    u='Hi '+result.rows[0].name.toString();
+                    u='Hi '+user[i].name.toString();
                 }
             }
         }
