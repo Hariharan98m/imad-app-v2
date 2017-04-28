@@ -86,13 +86,20 @@ app.get('/login1', function (req, res) {
 function f(data){
     console.log(data);
     var name=data.name;
-    //var description=data.description;
+    var description=data.description;
     var area_id=data.area_id;
     var est_name=data.est_name;
     var daily_menu_id=data.daily_menu_id;
     var comments=data.comment;
     var rating=data.rating;
- var htmltemplate=`<html>
+    var menu=''+data.menu.cuisine+'\n Start: '+data.menu.start+'\n End: '+data.menu.end+'';
+    var list='<ul>';
+    for (var i=0;i<data.menu.dishes.length;i++){
+        var dish=data.menu.dishes[i].dish_name+'   Price: '+data.menu.dishes[i].price;
+        list+='<li>'+dish+'</li><br>';
+        }
+    list+='</ul>';
+    var htmltemplate=`<html>
       <head>
           <title id=tit>
               ${name}
@@ -114,8 +121,15 @@ function f(data){
                 ${est_name}
             </h3>
               <div>
-                  description
+                  ${description}
               </div>
+              <div>
+              <input type='submit' placeholder='Daily Menu' id='subbtn2' style="font-family:calibri;"/>
+              ${menu}
+              <input type='submit' placeholder='Dishes' id='subbtn2' style="font-family:calibri;"/>
+              ${list}
+              </div>
+              <br>
               <hr/>
               <div>
               <h5>Rate it!</h5>
@@ -355,6 +369,7 @@ var database=[
     "area_id": 2,
     "est_name": "Sweet Shop",
     "daily_menu_id": 4,
+    "description":"Pure and opulent Desserts and Bakes for a Refreshing evening",
     "rating":"",
     "comment":"",
     "menu": {
@@ -414,6 +429,7 @@ var database=[
     "area_id": 1,
     "est_name": "Quick Bites",
     "daily_menu_id": 5,
+    "description":"Elegant Ambience, cozy for a Delightful Cheesy Alfredo",
     "rating":"",
     "comment":"",
     "menu": {
@@ -473,6 +489,7 @@ var database=[
     "area_id": 4,
     "est_name": "Cafe",
     "daily_menu_id": 6,
+    "description":"Hot chocolate and Cheesy Nachos drool a watery mouth",
     "rating":"",
     "comment":"",
     "menu": {
@@ -533,6 +550,7 @@ var database=[
     "name": "Haunted",
     "area_id": 2,
     "est_name": "Casual Dining",
+    "description":"A candle light dinner with Classic Tikka, Momos and the Special in-house Haunted Fries",
     "daily_menu_id": 7,
     "rating":"",
     "comment":"",
@@ -581,6 +599,7 @@ var database=[
     "area_id": 5,
     "est_name": "Casual Dining",
     "daily_menu_id": 6,
+    "description":"The Cocoa Beans in an oozy Fudge melts the heart out of you- Behold the Pies and decor",
     "rating":"",
     "comment":"",
     "menu": {
@@ -642,6 +661,7 @@ var database=[
     "area_id": 7,
     "est_name": "Nightlife",
     "daily_menu_id": 7,
+    "description":"Ever heard of Bread Halwa? The Gajar Ka blended into BBQ's traditional Shawarma",
     "rating":"",
     "comment":"",
     "menu": {
@@ -710,6 +730,7 @@ var database=[
     "est_name": "Casual Dining",
     "daily_menu_id": 2,
     "rating":"",
+    "description":"A Paradise for a Rich Pure Vegi Breakfast- Jain flavoured",
     "comment":"",
     "menu": {
       "id": 2,
