@@ -101,7 +101,7 @@ function f(data){
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-      <img src="/ui/rest4.png" style='width=409px;height:147px;margin-left:200px;'>
+      <img src="/ui/rest4.png" style='width=409px;height:147px;margin-left:100px;'>
           <div class="special">
               <div>
                   <a href="/restaurants">Back to Articles</a>
