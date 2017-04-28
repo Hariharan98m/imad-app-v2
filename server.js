@@ -92,7 +92,7 @@ function f(data){
     var daily_menu_id=data.daily_menu_id;
     var comments=data.comment;
     var rating=data.rating;
-    var menu='<h4>'+data.menu.cuisine+'</h4><br> Start: '+data.menu.start+'<br> End: '+data.menu.end+'';
+    var menu='<h4>'+data.menu.cuisine+'</h4><br> Start: '+data.menu.start+'<br><br> End: '+data.menu.end+'';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
         var dish=data.menu.dishes[i].dish_name+'   <>Price:</> '+data.menu.dishes[i].price;
@@ -127,7 +127,9 @@ function f(data){
               </div>
               <br>
               <div>
-              <input type='submit' value='Daily Menu' id='subbtn2' style="font-family:calibri;"/>
+              <input type='submit' value='Daily Menu' id='subbtn2' style="font-family:calibri;
+    font-size: 15px;
+    color: #632f63;"/>
               ${menu}
               <br>
               <input type='submit' placeholder='Dishes' id='subbtn3' style="font-family:calibri;"/>
