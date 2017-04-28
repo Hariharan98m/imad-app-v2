@@ -267,7 +267,9 @@ app.get('/restaurants', function (req, res) {
                 }
             }
         }
+        else{
         u='You are not logged in';
+        }
         res.send(temp(rest_Data,u));
 });
 
