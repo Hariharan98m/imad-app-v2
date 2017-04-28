@@ -95,7 +95,7 @@ function f(data){
     var menu=''+data.menu.cuisine+'\n Start: '+data.menu.start+'\n End: '+data.menu.end+'';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
-        var dish=data.menu.dishes[i].dish_name+'   Price: '+data.menu.dishes[i].price;
+        var dish=data.menu.dishes[i].dish_name+'   <>Price:</> '+data.menu.dishes[i].price;
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
