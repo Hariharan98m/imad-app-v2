@@ -36,14 +36,29 @@
     };
     
     
-    var submit2 = document.getElementById('subbtn2');
+    var submit = document.getElementById('subbtn');
     submit.onclick = function () {
-    var cont=document.getElementById('m');
-    cont.innerHTML=
-    `${menu}
-         <br>
-              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
-              <div id=dish>
-              ${list}
-              </div>`;
+        // Create a request object
+        
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+                // Take some action
+                if (request.status === 200) {
+                    // clear the form & reload all the comments
+                    var reply=request.responseText;
+                    var m=document.getElementById('m');
+                    m.innerHTML=reply;
+                } 
+                submit.value = 'Daily Menu';
+          }
+        };
+        
+        // Make the request
+        request.open('POST', '/retdm', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(NULL);  
+        submit.value = 'Fetching data...';
     };
