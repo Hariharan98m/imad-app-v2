@@ -123,7 +123,7 @@ function f(data){
                  <h3>
                 ${est_name}
             </h3>
-            </h4>${loc_name}, ${city} </h4>
+            <h4>${loc_name}, ${city} </h4>
             <div style='font-size:15px'>${zip_code}</div>
               <div style="font-size: 15px;
     font-style: italic;
