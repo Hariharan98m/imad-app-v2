@@ -34,12 +34,3 @@
         request.send(JSON.stringify({'comment': comment,'title':title,'rating':rating}));  
         submit.value = 'Submitting...';
     };
-    var submit2 = document.getElementById('subbtn2');
-    submit.onclick = function () {
-        var m=document.getElementById('m');
-        m.innerHTML=
-        `<br>
-              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
-              <div id=dish>
-              </div>;`;
-    };
