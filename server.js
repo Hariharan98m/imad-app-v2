@@ -139,8 +139,13 @@ function f(data){
     color: #632f63;
     background:white"/>
     <br>    
-    <div id=m> 
-              
+    <div id=m>
+        ${menu}
+         <br>
+              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
+              <div id=dish>
+              ${dish}
+              </div>     
     </div>
               </div>
               <br>
