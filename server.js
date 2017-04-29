@@ -95,7 +95,7 @@ function f(data){
     var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
-        var dish="<div style='font-size:15px;color:#e01f4a'>"+data.menu.dishes[i].dish_name+'   Price: '+data.menu.dishes[i].price+'</div>';
+        var dish="<div style='font-size:15px;color:#e01f4a'>"+data.menu.dishes[i].dish_name+'           Price: '+data.menu.dishes[i].price+'</div>';
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
@@ -128,13 +128,13 @@ function f(data){
               <br>
               <div>
               <input type='submit' value='Daily Menu' id='subbtn2' style="font-family:calibri;
-    font-size: 20px;
+    font-size: 15px;
     color: #632f63;
     background:white"/>
     <br>
               ${menu}
               <br>
-              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:20px;background:white"/>
+              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
               ${list}
               </div>
               <br>
