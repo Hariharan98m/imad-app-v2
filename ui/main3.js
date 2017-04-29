@@ -38,10 +38,8 @@
     submit.onclick = function () {
         var m=document.getElementById('m');
         m.innerHTML=
-        `${menu}
-              <br>
+        `<br>
               <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
               <div id=dish>
-              ${list}
               </div>;`;
     };
