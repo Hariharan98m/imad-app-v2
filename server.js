@@ -92,7 +92,7 @@ function f(data){
     var daily_menu_id=data.daily_menu_id;
     var comments=data.comment;
     var rating=data.rating;
-    var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;font-color:crimson' >Start: "+data.menu.start+"<br> End: "+data.menu.end+'</div>';
+    var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;font-color:crimson' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
         var dish=data.menu.dishes[i].dish_name+'   <>Price:</> '+data.menu.dishes[i].price;
@@ -383,8 +383,8 @@ var database=[
     "comment":"",
     "menu": {
       "id": 4,
-      "start": "2017-04-16T07:24:50.1+00:00",
-      "end": "2017-04-17T07:24:50.1+00:00",
+      "start": "2017-04-16 T0 7:24:50",
+      "end": "2017-04-17 T0 7:24:50",
       "cuisine": "North Indian",
       "dishes": [
         {
