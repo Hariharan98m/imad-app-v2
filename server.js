@@ -92,10 +92,13 @@ function f(data){
     var daily_menu_id=data.daily_menu_id;
     var comments=data.comment;
     var rating=data.rating;
+    var city=data.area.city;
+    var zip_code=data.area.zip_code;
+    var loc_name=data.area.loc_name;
     var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
-        var dish="<div style='font-size:15px;color:#e01f4a'>"+data.menu.dishes[i].dish_name+'           Price: '+data.menu.dishes[i].price+'</div>';
+        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           Price: '+data.menu.dishes[i].price+'</div>';
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
@@ -120,6 +123,8 @@ function f(data){
                  <h3>
                 ${est_name}
             </h3>
+            </h4>${loc_name}, ${city} </h4>
+            <div style='font-size:15px'>${zip_code}</div>
               <div style="font-size: 15px;
     font-style: italic;
     color: blue;">
