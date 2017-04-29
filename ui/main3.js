@@ -36,8 +36,8 @@
     };
     
     
-    var submit = document.getElementById('subbtn');
-    submit.onclick = function () {
+    var submit2 = document.getElementById('subbtn2');
+    submit2.onclick = function () {
         // Create a request object
         
         var request = new XMLHttpRequest();
