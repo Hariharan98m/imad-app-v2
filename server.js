@@ -140,12 +140,7 @@ function f(data){
     background:white"/>
     <br>    
     <div id=m> 
-              ${menu}
-              <br>
-              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
-              <div id=dish>
-              ${list}
-              </div>
+              
     </div>
               </div>
               <br>
