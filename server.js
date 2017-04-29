@@ -82,7 +82,7 @@ app.get('/login1', function (req, res) {
     res.send("ok");
 });
 
-
+app.post()
 function f(data){
     console.log(data);
     var name=data.name;
@@ -138,11 +138,15 @@ function f(data){
     font-size: 15px;
     color: #632f63;
     background:white"/>
-    <br>
+    <br>    
+    <div id=m> 
               ${menu}
               <br>
               <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
+              <div id=dish>
               ${list}
+              </div>
+    </div>
               </div>
               <br>
               <hr/>
