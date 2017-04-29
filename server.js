@@ -144,7 +144,6 @@ function f(data){
     background:white"/>
     <br>    
     <div id=m>
-    ${menu}
     </div>
          <br>
               <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
