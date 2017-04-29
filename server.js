@@ -86,6 +86,7 @@ app.get('/login1', function (req, res) {
 function f(data){
     console.log(data);
     var name=data.name;
+    var id=data.id;
     var description=data.description;
     var area_id=data.area_id;
     var est_name=data.est_name;
@@ -111,7 +112,7 @@ function f(data){
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-      <img src="/ui/rest4.png" style='width=409px;height:147px;margin-left:100px;'>
+      <img src="/ui/${id}.png" style='width=409px;height:147px;margin-left:100px;'>
           <div class="special">
               <div>
                   <a href="/restaurants">Back to Articles</a>
