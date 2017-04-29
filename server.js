@@ -81,7 +81,12 @@ app.get('/login1', function (req, res) {
     }
     res.send("ok");
 });
-
+var curr_rest;
+app.post('/retdm',function(req,res){
+var data=curr_rest;
+ var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
+ res.send(menu);
+});
 function f(data){
     console.log(data);
     var name=data.name;
@@ -139,7 +144,13 @@ function f(data){
     background:white"/>
     <br>    
     <div id=m>
+    ${menu}
     </div>
+         <br>
+              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
+              <div id=dish>
+              ${list}
+              </div>
               </div>
               <br>
               <hr/>
@@ -357,7 +368,8 @@ app.post('/comment',function(req,res){
 });
 app.get('/:rest_id',function(req,res){
     //'article-one'
-    console.log(database[req.params.rest_id]);
+    curr_rest=database[req.params.rest_id];
+    
    res.send(f(database[req.params.rest_id]));
    
 });
