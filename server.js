@@ -82,7 +82,6 @@ app.get('/login1', function (req, res) {
     res.send("ok");
 });
 
-app.post()
 function f(data){
     console.log(data);
     var name=data.name;
@@ -144,7 +143,7 @@ function f(data){
          <br>
               <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
               <div id=dish>
-              ${dish}
+              ${list}
               </div>     
     </div>
               </div>
