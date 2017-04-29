@@ -52,7 +52,7 @@
                     var m=document.getElementById('m');
                     m.innerHTML=reply;
                 } 
-                submit.value = 'Daily Menu';
+                submit2.value = 'Daily Menu';
           }
         };
         
@@ -60,5 +60,5 @@
         request.open('POST', '/retdm', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(NULL);  
-        submit.value = 'Fetching data...';
+        submit2.value = 'Fetching data...';
     };
