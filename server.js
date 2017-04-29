@@ -92,10 +92,10 @@ function f(data){
     var daily_menu_id=data.daily_menu_id;
     var comments=data.comment;
     var rating=data.rating;
-    var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;font-color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
+    var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
-        var dish="<div style='font-size:15px;font-color:#e01f4a'>"+data.menu.dishes[i].dish_name+'   Price: '+data.menu.dishes[i].price+'</div>';
+        var dish="<div style='font-size:15px;color:#e01f4a'>"+data.menu.dishes[i].dish_name+'   Price: '+data.menu.dishes[i].price+'</div>';
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
