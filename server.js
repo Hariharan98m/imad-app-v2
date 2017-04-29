@@ -129,11 +129,12 @@ function f(data){
               <div>
               <input type='submit' value='Daily Menu' id='subbtn2' style="font-family:calibri;
     font-size: 15px;
-    color: white;"/>
+    color: #632f63;
+    background:white"/>
     <br>
               ${menu}
               <br>
-              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;color:white;"/>
+              <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;background:white"/>
               ${list}
               </div>
               <br>
