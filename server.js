@@ -83,7 +83,7 @@ app.get('/login1', function (req, res) {
 });
 
 app.get('/ui/0',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui','0'));
+    res.sendFile(path.join(__dirname, 'ui','0.PNG'));
 });
 
 app.post('/retdm',function(req,res){
@@ -114,7 +114,6 @@ function f(data){
     var est_name=data.est_name;
     var daily_menu_id=data.daily_menu_id;
     var comments=data.comment;
-    var rating=data.rating;
     var city=data.area.city;
     var zip_code=data.area.zip_code;
     var loc_name=data.area.loc_name;
@@ -163,7 +162,6 @@ function f(data){
     background:white"/>
     <br>    
     <div id='m'>
-    
     </div>
          <br>
               <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
@@ -185,8 +183,7 @@ function f(data){
               <hr>
               <div>
               <h4>So far</h4>
-              <div>${rating}</div>
-              <div>${comments}</div>
+              <div id='cmt'>${comments}</div>
               </div>
           </div>
           <script type="text/javascript" src="/ui/main3.js"></script>
@@ -341,41 +338,13 @@ app.get('/logout',function(req,res){
 app.post('/comment',function(req,res){
     var comment=req.body.comment.toString();
     var rating=req.body.rating.toString();
-    console.log('I ve striped title:'+title);
+    var id=req.body.id.toString();
     console.log('I m here in the comments page'+comment+'  '+rating);
     if (req.session&&req.session.auth&&req.session.auth.userId){
             console.log('cookie set');
-            var user='';
-            var his='';
-            var his2='';
-                pool.query("Select name from users where name='"+req.session.auth.userId.toString()+"';",function(err,result){
-                    user=result.rows[0].name.toString().trim();
-                    console.log('user:'+user);
-                pool.query("select comments, rating from restaurants where name=$1;",[title],function(err,result){
-                    his=result.rows[0].comments.toString().trim();
-                    his2=result.rows[0].rating.toString().trim();
-                   pool.query('SELECT CURRENT_TIMESTAMP;',function(err,result){
-                    var date=result.rows[0].now.toString();
-                pool.query("update articles set comments=$1,rating=$2 where name=$3;",['<p>'+his+'<b>'+user+'</b>@ '+date+': '+comment+'</p>','<p>'+his1+'<b>'+user+': '+rating+'</p>',title],function(err,result){
-                    if(err){
-                        res.send('error');
-                    }
-                    else{
-                        pool.query("select comments, rating from articles where name=$1;",[title],function(err,result){
-                        
-                    res.send(result.rows[0].comments.toString().trim());
-                    });
-                    
-                    }
-    
-                });
-                    
-                });
-                });
-                
-                
-                });
-                
+            var user=req.session.auth.userId;
+            database[id].comment+='<p>'+'@<b>'+user+'</b> :  '+rating+'stars$<br>'+comment+'</p>';
+            res.send(database[id].comment);
     }       
     else{
         res.send('Log in to comment');
