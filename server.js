@@ -179,7 +179,6 @@ function f(data){
               <input type='text' placeholder='Comment-box' id='commentbox' style="width:350px;height:75px;font-family:calibri;"/>
               <input type='submit' placeholder='Submit' id='subbtn' style="font-family:calibri;"/>
               </div>
-              <br>
               <hr>
               <div>
               <h4>So far</h4>
