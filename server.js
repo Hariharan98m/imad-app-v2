@@ -87,18 +87,10 @@ app.get('/ui/0',function(req,res){
 });
 
 app.get('/retdm',function(req,res){
- var data={};
- var id=0;
- console.log('id=');
- console.log(id);
- for(var i=0;i<database.length;i++){
-     if(database[i].id===id)
-        {data=database[i];
+  var data=database[req.body.id];
         
-        var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
+  var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
  res.status(200).send(menu);
-}
- }
  
 });
 
