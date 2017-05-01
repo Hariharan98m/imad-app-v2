@@ -57,8 +57,11 @@
         };
         
         // Make the request
+        var id = document.getElementById('i').innerHTML;
         request.open('POST', '/retdm', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(NULL);  
+        request.send(JSON.stringify({'id': id}));
         submit2.value = 'Fetching data...';
     };
+    
+    
