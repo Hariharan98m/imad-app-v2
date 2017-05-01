@@ -81,9 +81,15 @@ app.get('/login1', function (req, res) {
     }
     res.send("ok");
 });
-app.post('/retdm',function(req,res){
+
+app.get('/ui/:id',function(req,res){
+    var img=req.params.id+'.PNG';
+    res.sendFile(path.join(__dirname, 'ui', img));
+});
+
+app.get('/retdm',function(req,res){
  var data={};
- var id=req.body.id;
+ var id=0;
  console.log('id=');
  console.log(id);
  for(var i=0;i<database.length;i++){
@@ -392,10 +398,6 @@ app.post('/comment',function(req,res){
     else{
         res.send('Log in to comment');
     }
-});
-app.get('/ui/:id',function(req,res){
-    var img=req.params.id+'.PNG';
-    res.sendFile(path.join(__dirname, 'ui', img));
 });
 
 app.get('/:rest_id',function(req,res){
