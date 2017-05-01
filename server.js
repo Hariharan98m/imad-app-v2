@@ -91,7 +91,7 @@ app.post('/retdm',function(req,res){
         {data=database[i];
         
         var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
- res.send(menu);
+ res.status(200).send(menu);
 }
  }
  
