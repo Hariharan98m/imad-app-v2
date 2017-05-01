@@ -86,7 +86,7 @@
                     var dish=document.getElementById('dish');
                     dish.innerHTML=reply;
                 } 
-                submit2.value = 'The Dish Bowl';
+                submit3.value = 'The Dish Bowl';
           }
         };
         
@@ -94,8 +94,8 @@
         var id = document.getElementById('i').innerHTML;
         console.log('in main3.js id=');
         console.log(id);
-        request.open('POST', '/retdm', true);
+        request.open('POST', '/retdish', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({'id': id}));
-        submit2.value = 'Fetching data...';
+        submit3.value = 'Fetching data...';
     };
