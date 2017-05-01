@@ -95,7 +95,7 @@ app.post('/retdm',function(req,res){
 });
 
 app.post('/retdish',function(req,res){
- var data;
+ var data={};
  var id=req.body.id;
  for(var i=0;i<database.length;i++){
      if(database[i].id===id)
@@ -110,10 +110,6 @@ app.post('/retdish',function(req,res){
  res.send(list);
 });
 
-app.get('/ui/:id',function(req,res){
-    var img=req.params.id+'.PNG';
-    res.sendFile(path.join(__dirname, 'ui', img));
-});
 
 function f(data){
     var name=data.name;
@@ -392,6 +388,10 @@ app.post('/comment',function(req,res){
     else{
         res.send('Log in to comment');
     }
+});
+app.get('/ui/:id',function(req,res){
+    var img=req.params.id+'.PNG';
+    res.sendFile(path.join(__dirname, 'ui', img));
 });
 
 app.get('/:rest_id',function(req,res){
