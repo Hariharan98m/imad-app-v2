@@ -175,7 +175,6 @@ function f(data){
               <div>
               <h5>Rate it!</h5>
               <input type='text' placeholder='Rating' id='rate' style="width:50px;height:30px;font-family:calibri;"/>
-              <input type='submit' placeholder='Submit' id='subbtn2' style="font-family:calibri;"/>
               </div>
               <div>
               <h5>Comment Right Away!!</h5>
@@ -341,11 +340,9 @@ app.get('/logout',function(req,res){
 
 app.post('/comment',function(req,res){
     var comment=req.body.comment.toString();
-    var title=req.body.title.toString();
-    var rating=req.body.rt.toString();
-    title=title.trim();
+    var rating=req.body.rating.toString();
     console.log('I ve striped title:'+title);
-    console.log('I m here in the comments page'+comment+' '+title);
+    console.log('I m here in the comments page'+comment+'  '+rating);
     if (req.session&&req.session.auth&&req.session.auth.userId){
             console.log('cookie set');
             var user='';
