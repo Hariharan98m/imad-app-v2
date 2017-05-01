@@ -342,7 +342,7 @@ app.post('/comment',function(req,res){
     if (req.session&&req.session.auth&&req.session.auth.userId){
             console.log('cookie set');
             var user=req.session.auth.userId;
-            database[id].comment+='<p>'+'@<b>'+user+'</b> :  '+rating+'stars$<br>'+comment+'</p>';
+            database[id].comment+='<p>'+"@<b style:'font-size: 15px;font-style: italic;'>"+user+'</b> :  '+rating+"<i style:'font-style:italic;font-size:13px'>stars</i><br><div style='font-size:15px;color:blue;'>"+comment+'</div></p>';
             res.send(database[id].comment);
     }       
     else{
