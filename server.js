@@ -82,10 +82,6 @@ app.get('/login1', function (req, res) {
     res.send("ok");
 });
 
-app.get('/ui/0',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui','0.PNG'));
-});
-
 app.post('/retdm',function(req,res){
   var data=database[req.body.id];
         
@@ -134,7 +130,7 @@ function f(data){
       </head> 
       <body>
       <div id='i' style='font-size:0px'>${id}</div>
-      <img src="/ui/${id}" style='width=409px;height:147px;margin-left:80px;'>
+      <img src="/ui/${id}" style='width=409px;height:500px;margin-left:80px;'>
       <br><br>
           <div class="special">
               <div>
@@ -355,6 +351,12 @@ app.get('/:rest_id',function(req,res){
    res.send(f(database[req.params.rest_id]));
    
 });
+
+app.get('/ui/:id',function(req,res){
+    var id=req.params.id+'.PNG';
+    res.sendFile(path.join(__dirname, 'ui',id));
+});
+
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`App listening on port ${port}!`);
