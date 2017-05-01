@@ -83,8 +83,7 @@ app.get('/login1', function (req, res) {
 });
 
 app.get('/ui/0',function(req,res){
-    var img=req.params.id+'.PNG';
-    res.sendFile(path.join(__dirname, 'ui', img));
+    res.sendFile(path.join(__dirname, 'ui','0'));
 });
 
 app.get('/retdm',function(req,res){
