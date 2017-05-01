@@ -95,7 +95,7 @@ app.post('/retdm',function(req,res){
 });
 
 app.post('/retdish',function(req,res){
- var data={};
+ var data;
  var id=req.body.id;
  for(var i=0;i<database.length;i++){
      if(database[i].id===id)
