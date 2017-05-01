@@ -135,6 +135,7 @@ function f(data){
       <body>
       <div id='i' style='font-size:0px'>${id}</div>
       <img src="/ui/${id}" style='width=409px;height:147px;margin-left:80px;'>
+      <br><br>
           <div class="special">
               <div>
                   <a href="/restaurants">Back to Articles</a>
