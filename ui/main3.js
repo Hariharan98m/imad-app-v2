@@ -49,6 +49,8 @@
                 if (request.status === 200) {
                     // clear the form & reload all the comments
                     var reply=request.responseText;
+                    console.log('reply=');
+                    console.log(reply);
                     var m=document.getElementById('m');
                     m.innerHTML=reply;
                 } 
@@ -58,6 +60,8 @@
         
         // Make the request
         var id = document.getElementById('i').innerHTML;
+        console.log('in main3.js id=');
+        console.log(id);
         request.open('POST', '/retdm', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({'id': id}));
