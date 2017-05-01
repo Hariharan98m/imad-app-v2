@@ -81,12 +81,33 @@ app.get('/login1', function (req, res) {
     }
     res.send("ok");
 });
-var curr_rest;
 app.post('/retdm',function(req,res){
-var data=curr_rest;
+ var data;
+ var id=req.body.id;
+ for(var i=0;i<database.length;i++){
+     if(database[i].id===id)
+        {data=database[i];break;}
+ }
  var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
  res.send(menu);
 });
+
+app.post('/retdish',function(req,res){
+ var data;
+ var id=req.body.id;
+ for(var i=0;i<database.length;i++){
+     if(database[i].id===id)
+        {data=database[i];break;}
+ }
+ var list='<ul>';
+    for (i=0;i<data.menu.dishes.length;i++){
+        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           Price: '+data.menu.dishes[i].price+'</div>';
+        list+='<li>'+dish+'</li><br>';
+        }
+    list+='</ul>';
+ res.send(list);
+});
+
 function f(data){
     console.log(data);
     var name=data.name;
@@ -116,6 +137,7 @@ function f(data){
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
+      <div id='i' style='font-size:0px'>${id}</div>
       <img src="/ui/${id}.png" style='width=409px;height:147px;margin-left:100px;'>
           <div class="special">
               <div>
@@ -365,10 +387,11 @@ app.post('/comment',function(req,res){
         res.send('Log in to comment');
     }
 });
+app.get('/ui/:id',function(req,res){
+    var img=req.params.id+'.PNG';
+    res.sendFile(path.join(__dirname, 'ui', img));
+});
 app.get('/:rest_id',function(req,res){
-    //'article-one'
-    curr_rest=database[req.params.rest_id];
-    
    res.send(f(database[req.params.rest_id]));
    
 });
