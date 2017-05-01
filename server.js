@@ -86,7 +86,7 @@ app.get('/ui/0',function(req,res){
     res.sendFile(path.join(__dirname, 'ui','0'));
 });
 
-app.get('/retdm',function(req,res){
+app.post('/retdm',function(req,res){
   var data=database[req.body.id];
         
   var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
