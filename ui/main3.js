@@ -26,12 +26,11 @@
         };
         
         // Make the request
+        var rating = document.getElementById('rate').value;
         var comment = document.getElementById('commentbox').value;
-        var title = document.getElementById('tit').innerHTML;
-        var rating = document.getElementById('rt').value;
         request.open('POST', '/comment', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({'comment': comment,'title':title,'rating':rating}));  
+        request.send(JSON.stringify({'comment': comment,'rating':rating}));  
         submit.value = 'Submitting...';
     };
     
