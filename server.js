@@ -82,7 +82,7 @@ app.get('/login1', function (req, res) {
     res.send("ok");
 });
 app.post('/retdm',function(req,res){
- var data;
+ var data={};
  var id=req.body.id;
  console.log('id=');
  console.log(id);
