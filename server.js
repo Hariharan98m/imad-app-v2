@@ -120,7 +120,7 @@ function f(data){
     var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
-        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           Price: '+data.menu.dishes[i].price+'</div>';
+        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           '+'Price: '+data.menu.dishes[i].price+'</div>';
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
@@ -134,7 +134,7 @@ function f(data){
       </head> 
       <body>
       <div id='i' style='font-size:0px'>${id}</div>
-      <img src="/ui/${id}.png" style='width=409px;height:147px;margin-left:100px;'>
+      <img src="/ui/${id}" style='width=409px;height:147px;margin-left:80px;'>
           <div class="special">
               <div>
                   <a href="/restaurants">Back to Articles</a>
