@@ -16,8 +16,8 @@
                         alert(reply);
                     }
                     else{
-                    var take=request.responseText.split('$');
-                    var cont=document.getElementById('r');
+                    var take=request.responseText;
+                    var cont=document.getElementById('cmt');
                     cont.innerHTML=request.responseText;
                     }   
                 } 
@@ -26,11 +26,12 @@
         };
         
         // Make the request
+        var id = document.getElementById('i').innerHTML;
         var rating = document.getElementById('rate').value;
         var comment = document.getElementById('commentbox').value;
         request.open('POST', '/comment', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({'comment': comment,'rating':rating}));  
+        request.send(JSON.stringify({'comment': comment,'rating':rating,'id':id}));  
         submit.value = 'Submitting...';
     };
     
