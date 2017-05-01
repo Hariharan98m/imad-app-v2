@@ -95,12 +95,7 @@ app.post('/retdm',function(req,res){
 });
 
 app.post('/retdish',function(req,res){
- var data={};
- var id=req.body.id;
- for(var i=0;i<database.length;i++){
-     if(database[i].id===id)
-        {data=database[i];break;}
- }
+ var data=database[req.body.id];
  var list='<ul>';
     for (i=0;i<data.menu.dishes.length;i++){
         var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           Price: '+data.menu.dishes[i].price+'</div>';
@@ -173,7 +168,6 @@ function f(data){
          <br>
               <input type='submit' value='Dishes' id='subbtn3' style="font-family:calibri;font-size:15px;background:white"/>
               <div id='dish'>
-              ${list}
               </div>
               </div>
               <br>
