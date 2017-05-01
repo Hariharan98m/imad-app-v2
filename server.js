@@ -130,7 +130,7 @@ function f(data){
       </head> 
       <body>
       <div id='i' style='font-size:0px'>${id}</div>
-      <img src="/ui/${id}" style='width=409px;height:500px;margin-left:80px;'>
+      <img src="/ui/${id}" style='width=409px;height:250px;margin-left:80px;'>
       <br><br>
           <div class="special">
               <div>
