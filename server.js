@@ -88,10 +88,13 @@ app.post('/retdm',function(req,res){
  console.log(id);
  for(var i=0;i<database.length;i++){
      if(database[i].id===id)
-        {data=database[i];break;}
- }
- var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
+        {data=database[i];
+        
+        var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
  res.send(menu);
+}
+ }
+ 
 });
 
 app.post('/retdish',function(req,res){
