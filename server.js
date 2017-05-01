@@ -84,6 +84,8 @@ app.get('/login1', function (req, res) {
 app.post('/retdm',function(req,res){
  var data;
  var id=req.body.id;
+ console.log('id=');
+ console.log(id);
  for(var i=0;i<database.length;i++){
      if(database[i].id===id)
         {data=database[i];break;}
@@ -109,7 +111,6 @@ app.post('/retdish',function(req,res){
 });
 
 function f(data){
-    console.log(data);
     var name=data.name;
     var id=data.id;
     var description=data.description;
