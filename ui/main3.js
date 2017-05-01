@@ -54,7 +54,7 @@
                     var m=document.getElementById('m');
                     m.innerHTML=reply;
                 } 
-                submit2.value = 'Daily Menu';
+                submit2.value = 'Menu of the day';
           }
         };
         
@@ -68,4 +68,34 @@
         submit2.value = 'Fetching data...';
     };
     
-    
+    var submit3 = document.getElementById('subbtn3');
+    submit3.onclick = function () {
+        // Create a request object
+        
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+                // Take some action
+                if (request.status === 200) {
+                    // clear the form & reload all the comments
+                    var reply=request.responseText;
+                    console.log('reply=');
+                    console.log(reply);
+                    var dish=document.getElementById('dish');
+                    dish.innerHTML=reply;
+                } 
+                submit2.value = 'The Dish Bowl';
+          }
+        };
+        
+        // Make the request
+        var id = document.getElementById('i').innerHTML;
+        console.log('in main3.js id=');
+        console.log(id);
+        request.open('POST', '/retdm', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({'id': id}));
+        submit2.value = 'Fetching data...';
+    };
