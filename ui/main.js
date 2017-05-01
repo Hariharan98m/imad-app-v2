@@ -21,7 +21,7 @@ sub.onclick=function(){
                   cont.innerHTML='';
                   clas='rgba(244, 67, 54, 0.35)';
               }
-              reply="<div style='background-color:"+clas+"height:20px;width:40px\';>"+reply+'</div>';
+              reply="<div style='background-color:"+clas+";height:20px;width:40px;'>"+reply+'</div>';
               var message=document.getElementById('message');
               message.innerHTML=reply;
               sub.value='Submit';
