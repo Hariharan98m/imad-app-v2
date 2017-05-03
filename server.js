@@ -94,7 +94,7 @@ app.post('/retdish',function(req,res){
  var data=database[req.body.id];
  var list='<ul>';
     for (i=0;i<data.menu.dishes.length;i++){
-        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+"  <em style:'color:blueviolet;'>         Price: </em>"+data.menu.dishes[i].price+'</div>';
+        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+"  <em style='color:blueviolet;'>         Price: </em>"+data.menu.dishes[i].price+'</div>';
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
