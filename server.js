@@ -16,7 +16,7 @@ var config={
    port:'5432',
    password:'consistently-fernery-lave'
 };
-var pool=new Pool(config);
+var database=new Pool(config);
 var session=require('express-session');
 app.use(session({
     secret:'someRandomSecretValue',
@@ -116,7 +116,7 @@ function f(data){
     var menu='<h2>'+data.menu.cuisine+"</h2> <div style='font-size:15px;color:#e0941f' >Start: "+data.menu.start+"<br/> End: "+data.menu.end+'</div>';
     var list='<ul>';
     for (var i=0;i<data.menu.dishes.length;i++){
-        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           '+'Price: '+data.menu.dishes[i].price+'</div>';
+        var dish="<div style='font-size:15px;color:#fd053c'>"+data.menu.dishes[i].dish_name+'           '+"<em style:'color:blue-violet'>Price: </em>"+data.menu.dishes[i].price+'</div>';
         list+='<li>'+dish+'</li><br>';
         }
     list+='</ul>';
@@ -134,7 +134,7 @@ function f(data){
       <br><br>
           <div class="special">
               <div>
-                  <a href="/restaurants">Back to Articles</a>
+                  <a href="/restaurants">Back to Restaurantss</a>
               </div>
               <hr/>
               <h1>
@@ -339,7 +339,7 @@ app.post('/comment',function(req,res){
     if (req.session&&req.session.auth&&req.session.auth.userId){
             console.log('cookie set');
             var user=req.session.auth.userId;
-            database[id].comment+='<p>'+"@<b style:'font-size: 15px;font-style: italic;'>"+user+'</b> :  '+rating+"<i style:'font-style:italic;font-size:13px'>stars</i><br><div style='font-size:15px;color:blue;'>"+comment+'</div></p>';
+            database[id].comment+='<p>'+"@<b style:'font-size: 15px;font-style: italic;'>"+user+'</b> :  '+rating+"<i style:'font-style:italic;font-size:13px'>stars</i><div style='font-size:15px;color:blue;'>"+comment+'</div></p>';
             res.send(database[id].comment);
     }       
     else{
