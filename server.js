@@ -67,7 +67,7 @@ app.post('/login', function (req, res) {
         if (hashed===dBstring){
         //Set the session
         req.session.auth={userId:username};
-        res.send('Successful check for credentials:'+username);
+        res.send('Successful check for credentials');
         }
     }
     else{
@@ -251,7 +251,7 @@ app.post('/create-user', function (req, res) {
     var dBstring=hash(password,salt);
     user.push({"name":username,"password":dBstring,"description":desc});
     req.session.auth={userId:username};
-    res.send('User successfully created:'+username);
+    res.send('User successfully created');
 });
 
 app.get('/clogin',function(req,res){
