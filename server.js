@@ -67,11 +67,11 @@ app.post('/login', function (req, res) {
         if (hashed===dBstring){
         //Set the session
         req.session.auth={userId:username};
-        res.send('Successful check for credentials');
+        res.status(200).send('Successful check for credentials: '+username);
         }
     }
     else{
-        res.send('Username/ Password Invalid. Try again.');
+        res.status(500).send('Username/ Password Invalid. Try again.');
     }
 });
 
@@ -251,7 +251,7 @@ app.post('/create-user', function (req, res) {
     var dBstring=hash(password,salt);
     user.push({"name":username,"password":dBstring,"description":desc});
     req.session.auth={userId:username};
-    res.send('User successfully created');
+    res.status(200).send('User successfully created:'+username);
 });
 
 app.get('/clogin',function(req,res){
